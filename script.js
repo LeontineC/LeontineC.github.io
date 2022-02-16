@@ -4,6 +4,7 @@ const pointer = document.querySelector('.pointer');
 const hamburger = document.querySelector('.hamburger');
 const list = document.querySelector('ul');
 const lines = document.querySelectorAll('.line');
+const listItems = document.querySelectorAll('li');
 
 //OPENING ANIMATION TIMEOUTS
 
@@ -33,8 +34,16 @@ handlePointer = (e) => {
 
 handleHamburger = (e) => {
    list.classList.toggle('active');
-   
+   lines.forEach(line => {
+       line.classList.toggle('clicked');
+   })
 };
+
+handleList = (e) => {
+    list.classList.remove('active');
+}
 
 document.addEventListener('mousemove', handlePointer);
 hamburger.addEventListener('click', handleHamburger);
+listItems.forEach(item => item.addEventListener('click', handleList));
+
