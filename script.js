@@ -45,15 +45,7 @@ handleHamburger = (e) => {
 
 handleList = (e) => {
     list.classList.remove('active');
-   
-        listItems.forEach(item => {
-            item.classList.remove('highlight')
-        });
-    
-        e.currentTarget.classList.add('highlight');
-   
-    
-}
+} 
 
 document.addEventListener('mousemove', handlePointer);
 hamburger.addEventListener('click', handleHamburger);
