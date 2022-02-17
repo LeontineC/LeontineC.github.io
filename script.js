@@ -5,6 +5,10 @@ const hamburger = document.querySelector('.hamburger');
 const list = document.querySelector('ul');
 const lines = document.querySelectorAll('.line');
 const listItems = document.querySelectorAll('li');
+const text = document.querySelectorAll('.text');
+const image = document.querySelectorAll('.image');
+const images = document.querySelector('.images');
+
 
 //OPENING ANIMATION TIMEOUTS
 
@@ -41,9 +45,45 @@ handleHamburger = (e) => {
 
 handleList = (e) => {
     list.classList.remove('active');
+   
+        listItems.forEach(item => {
+            item.classList.remove('highlight')
+        });
+    
+        e.currentTarget.classList.add('highlight');
+   
+    
 }
 
 document.addEventListener('mousemove', handlePointer);
 hamburger.addEventListener('click', handleHamburger);
 listItems.forEach(item => item.addEventListener('click', handleList));
 
+// INTERSECTION OBSERVER
+
+changeImage = (entries) => {
+    entries.forEach(entry => {
+        console.log(entry);
+        if(!entry.isIntersecting) {
+            images.lastElementChild.classList.remove('observing');
+            images.firstElementChild.classList.remove('action');
+            images.children[1].classList.remove('acting');
+          
+        } else {
+            images.lastElementChild.classList.add('observing');
+            images.firstElementChild.classList.add('action');
+            images.children[1].classList.add('acting');
+        }
+    })
+}
+
+let options = {
+    root: null,
+    threshold: 1,
+    rootMargin: '0px',
+
+}
+
+const sectionObserver = new IntersectionObserver(changeImage, options);
+
+sectionObserver.observe(images.lastElementChild); 

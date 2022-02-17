@@ -1,11 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Quintessential&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap");
 
+
+/* RESET */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* VARIABLES */
 
 :root {
   --color-dark: rgb(0, 0, 0);
@@ -14,6 +19,8 @@
   --fs-large: 2rem;
   --fs-small: 1.2rem;
 }
+
+/* CONTAINERS ALL */
 
 body {
   width: 100vw;
@@ -34,6 +41,8 @@ body {
   transition: opacity 5s ease-in;
 }
 
+/* NAV */
+
 nav {
   min-height: 10vh;
   background: var(--color-dark);
@@ -47,6 +56,7 @@ nav {
   left: 0;
   right: 0;
   padding: 4em 0;
+  z-index: 9;
 }
 
 .logo {
@@ -91,10 +101,16 @@ li {
   list-style: none;
 }
 
+.highlight {
+  border-bottom: 3px solid;
+  border-image: url("assets/leaves-bg.jpg") 1;
+}
+
 a {
   text-decoration: none;
   color: var(--color-light);
 }
+
 a:hover,
 a:focus {
   background: url("assets/leaves-bg.jpg");
@@ -121,6 +137,8 @@ a:focus {
   transition: 1s linear;
 }
 
+/* SECTIONS */
+
 .wrapper-section {
   display: flex;
   flex-direction: column;
@@ -130,8 +148,74 @@ a:focus {
 }
 
 section {
-  padding-bottom: 20em;
+  margin-top: 50vh;
+  letter-spacing: .2em;
+  line-height: 2em;
 }
+
+/* INTRO */
+
+.intro {
+  max-width: 50%;
+  /* display: grid; */
+  /* place-content: center; */
+  text-align: center;
+}
+
+.para-intro {
+  padding-bottom: 20vh;
+}
+
+.images {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  width:20rem;
+  height: 22.5rem;
+  padding: 1em;
+  background-color: var(--color-light);
+  border: 1px solid gray;
+  border-radius: 2%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+ 
+  margin: 0 auto;
+  display: block;
+  transition: 2s ease-in;
+}
+
+.action {
+  transform: rotate(10deg) translateX(50%);
+}
+ 
+.acting {
+  transform: rotate(-10deg) translateX(-50%);
+} 
+
+.image-3 {
+  transform: rotate(5deg);
+  filter: grayscale(100%);
+}
+
+.observing {
+  filter: grayscale(0%);
+}
+
+/* PROJECTS */
+.projects {
+  border: solid pink 1px;
+     margin-top: 100vh;
+}
+/* CONTACT */
+
+/* POINTER MOUSEFOLLOW */
 
 .pointer {
   position: fixed;
