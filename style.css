@@ -13,7 +13,7 @@
   box-sizing: border-box;
 }
 
-a { 
+a {
   text-decoration: none;
   color: var(--color-light);
 }
@@ -23,7 +23,9 @@ a {
 :root {
   --color-dark: rgb(0, 0, 0);
   --color-light: rgb(245, 245, 220);
-  /* --color-accent: rgb(77, 44, 17); */
+  --color-one: rgb(32, 196, 148);
+  --color-two: rgb(214, 97, 179);
+  --color-three: rgb(98, 194, 211);
   --fs-large: 2rem;
   --fs-small: 1.2rem;
   --bg: url("assets/bg.jpg");
@@ -227,7 +229,7 @@ h2 {
 
 /* PROJECTS */
 .projects {
-  width: 99%;
+  width: 100%;
   display: grid;
   align-content: center;
   text-align: center;
@@ -238,23 +240,101 @@ h2 {
   display: grid;
   align-content: center;
   grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
 }
 
 .cards img {
   margin: 0 auto;
   display: block;
   width: 40%;
-  height: 80%;
-  padding: .5em;
+  height: 450px;
+  padding: 0.5em;
   background: var(--color-light);
   filter: grayscale(100%);
   border-radius: 2%;
 }
 
 /* CONTACT */
+
 .contact {
-  border: solid purple 2px;
+  width: 100%;
+  overflow: hidden;
 }
+
+/*PARTICLES*/
+
+.wrapper-dots {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  font-size: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 150px;
+  padding: 4em;
+}
+
+.dots {
+  border-radius: 50%;
+  animation: color 5s linear infinite;
+  color: var(--color-light);
+}
+
+.wrapper-dots :nth-child(3n + 1) {
+  color: var(--color-one);
+}
+
+.wrapper-dots :nth-child(3n - 1) {
+  color: var(--color-two);
+}
+
+.wrapper-dots :nth-child(3n) {
+  color: var(--color-three);
+}
+
+.wrapper-dots :nth-child(1) {
+  animation: move 6s reverse infinite cubic-bezier(0.43, 0.87, 0.86, 0.33);
+}
+.wrapper-dots :nth-child(2) {
+  animation: move 9s reverse infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.wrapper-dots :nth-child(3) {
+  animation: move 4s reverse infinite cubic-bezier(0.6, 0.04, 0.98, 0.335);
+}
+.wrapper-dots :nth-child(4) {
+  animation: move 8s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrapper-dots :nth-child(5) {
+  animation: move 10s reverse infinite cubic-bezier(0.95, 0.05, 0.795, 0.035);
+}
+.wrapper-dots :nth-child(6) {
+  animation: move 5s reverse infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.wrapper-dots :nth-child(7) {
+  animation: move 7s infinite reverse cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+.wrapper-dots :nth-child(8) {
+  animation: move 6s reverse infinite cubic-bezier(0.19, 1, 0.22, 1);
+}
+.wrapper-dots :nth-child(9) {
+  animation: move 10s reverse infinite cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+
+@keyframes color {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes move {
+  50% {
+    transform: rotate(360deg) translate(200px, -500px);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* POINTER MOUSEFOLLOW */
 
 .pointer {
