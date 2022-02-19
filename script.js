@@ -2,10 +2,10 @@ const animation = document.querySelector('.animation');
 const wrapper = document.querySelector('.wrapper');
 const pointer = document.querySelector('.pointer');
 const hamburger = document.querySelector('.hamburger');
-const list = document.querySelector('ul');
+const list = document.querySelector('.navlist');
 const lines = document.querySelectorAll('.line');
 const listItems = document.querySelectorAll('li');
-const text = document.querySelectorAll('.text');
+const text = document.querySelectorAll('.list-text');
 const image = document.querySelectorAll('.image');
 const images = document.querySelector('.images');
 
