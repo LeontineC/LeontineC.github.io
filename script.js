@@ -8,6 +8,9 @@ const listItems = document.querySelectorAll('li');
 const text = document.querySelectorAll('.list-text');
 const image = document.querySelectorAll('.image');
 const images = document.querySelector('.images');
+const projectImages = document.querySelectorAll('.project-img');
+const card = document.querySelectorAll('.card');
+
 
 
 //ICONS
@@ -27,6 +30,7 @@ startOpacity = () => {
     wrapper.style.opacity = 1;
     document.body.style.overflow = "visible";
     document.body.style.overflowX = "hidden";
+    
 }
 
 setTimeout(stopDisplay, 10000);
@@ -54,11 +58,13 @@ document.addEventListener('mousemove', handlePointer);
 hamburger.addEventListener('click', handleHamburger);
 listItems.forEach(item => item.addEventListener('click', handleList));
 
-// INTERSECTION OBSERVER
+// INTERSECTION OBSERVERS
+
+
 
 changeImage = (entries) => {
     entries.forEach(entry => {
-        console.log(entry);
+        // console.log(entry);
         if(!entry.isIntersecting) {
             images.lastElementChild.classList.remove('observing');
             images.firstElementChild.classList.remove('action');
@@ -70,15 +76,35 @@ changeImage = (entries) => {
             images.children[1].classList.add('acting');
         }
     })
-}
+};
+
+/*loadImage = (entries) => {
+    entries.forEach(entry => {
+        console.log(entry);
+       if(entry.isIntersecting) {
+           entry.target.classList.add('loaded')
+       } else {
+           entry.target.classList.remove('loaded')
+       }
+    })
+    
+} */
 
 let options = {
     root: null,
     threshold: 1,
     rootMargin: '0px',
-
 }
 
-const sectionObserver = new IntersectionObserver(changeImage, options);
+/*let projectOptions = {
+    root: null,
+    threshold: .5,
+    rootMargin: '0px',
+} */
 
-sectionObserver.observe(images.lastElementChild); 
+const introObserver = new IntersectionObserver(changeImage, options);
+// const projectObserver = new IntersectionObserver(loadImage, projectOptions);
+
+introObserver.observe(images.lastElementChild); 
+
+// card.forEach( picture => {projectObserver.observe(picture);});

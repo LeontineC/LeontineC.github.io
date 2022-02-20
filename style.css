@@ -35,6 +35,7 @@ a {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 20vh;
+  /* overflow: hidden; */
 }
 
 body {
@@ -43,6 +44,7 @@ body {
   font-family: "Gideon Roman", cursive;
   color: var(--color-light);
   overflow: hidden;
+  position: relative;
   cursor: none;
 }
 
@@ -176,7 +178,6 @@ h2 {
 .intro {
   max-width: 50%;
   padding-bottom: 30em;
-  /* border: solid purple 2px; */
 }
 
 .para-intro {
@@ -232,24 +233,45 @@ h2 {
   display: grid;
   align-content: center;
   text-align: center;
-  /* border: solid purple 2px; */
+  border: solid purple 2px;
+ 
 }
 
 .cards {
   display: grid;
   align-content: center;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1em;
+  padding-top: 5em;
+  width: 100%;
 }
 
-.cards img {
+.card {
+  filter: grayscale(100%);
+  transition: 2s ease-in;
+  border: solid lime 1px;
+  padding-top: 8em;
+}
+
+.card-left {
+   transform: scale(.5);
+}
+
+.card-right {
+  transform: scale(.5);
+} 
+
+.loaded {
+  transform: translateX(0);
+  filter: grayscale(0);
+}
+
+.card img {
   margin: 0 auto;
   display: block;
   width: 40%;
   height: auto;
   padding: 0.5em;
   background: var(--color-light);
-  filter: grayscale(100%);
   border-radius: 2%;
 }
 
@@ -411,7 +433,6 @@ h2 {
   }
   .cards img {
     width: 30%;
-    /* height: 400px; */
   }
 }
 
@@ -496,7 +517,7 @@ h2 {
   }
 }
 
-/* ANIMATION */
+/*OPENING ANIMATION */
 
 .animation {
   position: absolute;
