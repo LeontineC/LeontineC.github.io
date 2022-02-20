@@ -23,9 +23,8 @@ a {
 :root {
   --color-dark: rgb(0, 0, 0);
   --color-light: rgb(245, 245, 220);
-  --color-one: rgb(32, 196, 148);
-  --color-two: rgb(214, 97, 179);
-  --color-three: rgb(98, 194, 211);
+  --color-accent: rgb(163, 126, 105);
+
   --fs-large: 2rem;
   --fs-small: 1.2rem;
   --bg: url("assets/bg.jpg");
@@ -247,7 +246,7 @@ h2 {
   margin: 0 auto;
   display: block;
   width: 40%;
-  height: 450px;
+  height: auto;
   padding: 0.5em;
   background: var(--color-light);
   filter: grayscale(100%);
@@ -259,6 +258,47 @@ h2 {
 .contact {
   width: 100%;
   overflow: hidden;
+  position: relative;
+}
+
+.contact-info {
+  padding-top: 3em;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  align-content: center;
+}
+
+.contact-info p {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  font-size: var(--fs-large);
+}
+
+.contact-info :nth-child(2) {
+  grid-row: 2/2;
+}
+
+.contact-info :nth-child(3) {
+  grid-row: 2/2;
+  grid-column: 2/3;
+}
+
+.contact-info :nth-child(4) {
+  grid-row: 2/2;
+  grid-column: 3/3;
+}
+
+.contact-icon {
+  width: 8em;
+  height: 3rem;
+  margin-top: 3rem;
+  stroke: var(--color-light);
+}
+.contact-icon:hover {
+  stroke: var(--color-accent);
+  stroke-width: 1;
 }
 
 /*PARTICLES*/
@@ -272,26 +312,16 @@ h2 {
   grid-template-rows: repeat(3, 1fr);
   gap: 150px;
   padding: 4em;
+  position: absolute;
+  z-index: -1;
 }
 
-.dots {
+.wrapper-dots > .dots {
   border-radius: 50%;
-  animation: color 5s linear infinite;
-  color: var(--color-light);
+  color: var(--color-accent);
+  filter: hue-rotate(0deg);
+  position: relative;
 }
-
-.wrapper-dots :nth-child(3n + 1) {
-  color: var(--color-one);
-}
-
-.wrapper-dots :nth-child(3n - 1) {
-  color: var(--color-two);
-}
-
-.wrapper-dots :nth-child(3n) {
-  color: var(--color-three);
-}
-
 .wrapper-dots :nth-child(1) {
   animation: move 6s reverse infinite cubic-bezier(0.43, 0.87, 0.86, 0.33);
 }
@@ -320,10 +350,20 @@ h2 {
   animation: move 10s reverse infinite cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 
-@keyframes color {
-  100% {
-    filter: hue-rotate(360deg);
-  }
+.wrapper-dots > .dots::before {
+  position: absolute;
+  content: ".";
+  color: blue;
+  top: -300px;
+  left: 300px;
+}
+
+.wrapper-dots > .dots::after {
+  position: absolute;
+  content: ".";
+  color: yellow;
+  top: 300px;
+  left: -300px;
 }
 
 @keyframes move {
@@ -332,6 +372,7 @@ h2 {
   }
   100% {
     transform: rotate(360deg);
+    filter: hue-rotate(360deg);
   }
 }
 
@@ -370,6 +411,7 @@ h2 {
   }
   .cards img {
     width: 30%;
+    /* height: 400px; */
   }
 }
 
@@ -422,6 +464,28 @@ h2 {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .contact-info {
+    grid-template-rows: repeat(4, 1fr);
+    margin-bottom: 2em;
+  }
+  .contact-info :nth-child(2) {
+    grid-row: 2;
+    grid-column: 2/3;
+  }
+  .contact-info :nth-child(3) {
+    grid-row: 3;
+    grid-column: 2/3;
+  }
+  .contact-info :nth-child(4) {
+    grid-row: 4;
+    grid-column: 2/3;
+  }
+  .cards img {
+    width: 60%;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .images {
     width: 100%;
@@ -433,15 +497,6 @@ h2 {
 }
 
 /* ANIMATION */
-
-/*.animation::before {
-            content: 'webdeveloper';
-            position: absolute;
-            color: beige;
-            display: inline-block;
-            font-size: 7vw;
-            left: 30%;
-}*/
 
 .animation {
   position: absolute;

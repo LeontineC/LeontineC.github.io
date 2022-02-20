@@ -10,6 +10,9 @@ const image = document.querySelectorAll('.image');
 const images = document.querySelector('.images');
 
 
+//ICONS
+feather.replace();
+
 //OPENING ANIMATION TIMEOUTS
 
 stopDisplay = () => {
