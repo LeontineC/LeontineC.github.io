@@ -47,7 +47,7 @@ body {
   color: var(--color-light);
   overflow-x: hidden;
   position: relative;
-  cursor: pointer;
+  cursor: none;
 }
 
 .wrapper {
@@ -324,6 +324,8 @@ h2 {
   stroke-width: 1;
 }
 
+
+
 /*PARTICLES*/
 
 .wrapper-dots {
@@ -401,7 +403,7 @@ h2 {
 
 /* POINTER MOUSEFOLLOW */
 
-/*.pointer {
+.pointer {
   position: fixed;
   left: 0;
   top: 0;
@@ -413,7 +415,7 @@ h2 {
   pointer-events: none;
   transition: 0.1s;
   z-index: 10;
-} */
+} 
 
 /* MEDIA QUERIES */
 
@@ -434,6 +436,12 @@ h2 {
   }
   .cards img {
     width: 30%;
+  }
+  body {
+    cursor: pointer;
+  }
+  .pointer {
+    pointer-events: all;
   }
  
 }
