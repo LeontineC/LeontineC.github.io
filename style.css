@@ -167,7 +167,7 @@ a {
   text-decoration: none;
   color: var(--color-light);
   position: relative;
-  z-index: 10;
+  /* z-index: 10; */
 }
 
 h2.letters {
@@ -475,16 +475,16 @@ h3 {
     flex-direction: column;
     justify-content: space-evenly;
     font-size: var(--fs-large);
+    transform: translateX(100%);
     opacity: 0;
-    /* display: none;   */
     transition: 4s ease-in-out;
   }
   .hamburger {
     display: block;
   }
   .navlist.active {
-    opacity: 1;
-    /* display: block;  */
+   transform: translateX(0%);
+   opacity: 1;
   }
   .pointer {
     display: none;
