@@ -36,7 +36,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 20vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 body {
@@ -45,7 +45,6 @@ body {
   font-family: "Gideon Roman", cursive;
   color: var(--color-light);
   overflow: hidden;
-  /* position: relative; */
   cursor: none;
 }
 
@@ -72,8 +71,6 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
-  /* left: 0; */
-  /* right: 0; */
   padding: 4em 0;
   z-index: 9;
 }
@@ -167,7 +164,6 @@ a {
   text-decoration: none;
   color: var(--color-light);
   position: relative;
-  /* z-index: 10; */
 }
 
 h2.letters {
@@ -184,6 +180,8 @@ h2 {
 
 .para {
   padding-bottom: 8em;
+  width: 60%;
+  margin: 0 auto;
 }
 
 h3 {
@@ -193,7 +191,6 @@ h3 {
 /* INTRO */
 
 .intro {
-  max-width: 50%;
   padding-bottom: 25em;
 }
 
@@ -261,7 +258,6 @@ h3 {
   position: relative;
   display: grid;
   align-content: center;
-  /* z-index: 0.5; */
   padding-bottom: 2em;
 }
 
@@ -293,12 +289,10 @@ h3 {
   height: 3rem;
   margin-top: 1.5rem;
   stroke: var(--color-light);
-  
 }
 
 .project-icon:hover {
   stroke: var(--color-accent);
-
   stroke-width: 1;
 }
 
@@ -447,6 +441,9 @@ h3 {
     font-size: var(--fs-small);
     width: 40%;
   }
+  .intro {
+    padding-bottom: 15em;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -459,6 +456,13 @@ h3 {
   }
   .cards img {
     width: 30%;
+  }
+  .para {
+    font-size: .8em;
+    width: 80%;
+  }
+  .intro {
+    padding-bottom: 12.5rem;
   }
 }
 
@@ -483,8 +487,8 @@ h3 {
     display: block;
   }
   .navlist.active {
-   transform: translateX(0%);
-   opacity: 1;
+    transform: translateX(0%);
+    opacity: 1;
   }
   .pointer {
     display: none;
@@ -550,23 +554,13 @@ h3 {
 
 /*OPENING ANIMATION */
 
-/*.animation::before {
-  content: "webdeveloper";
-  position: absolute;
-  color: var(--color-primary);
-  display: inline-block;
-  font-size: 7vw;
-  left: 30%;
-  font-family: var(--font-primary);
-} */
-
 .animation {
   position: absolute;
-  
+
   border: solid var(--color-dark) 40px;
   box-sizing: border-box;
   width: 100%;
-  max-height: 100vh;  
+  max-height: 100vh;
   margin: 0 auto;
   z-index: 2;
   top: 0;
@@ -576,15 +570,13 @@ h3 {
   display: block;
   transition: opacity 8s ease-out;
   opacity: 1;
-  
+
   background-repeat: repeat-x, repeat-x, repeat-x, repeat-x, no-repeat;
 
-  background-image: 
-  url("assets/forest.png"), url("assets/clouds.png"),
+  background-image: url("assets/forest.png"), url("assets/clouds.png"),
     url("assets/black-tree.png"), url("assets/cloud-dust.png"),
     url("assets/mountains.jpg");
-    background-size: 200%, 110%, 120%, 150%, 100%;
-   
+  background-size: 200%, 110%, 120%, 150%, 100%;
 
   background-size: 200%, 110%, 120%, 150%, cover;
   background-position: 70%, -100%, 10%, 100%, 100%;
@@ -620,5 +612,4 @@ h3 {
   to {
     background-position: 100%, 300%, -100%, -200%, 100%;
   }
-} 
-
+}

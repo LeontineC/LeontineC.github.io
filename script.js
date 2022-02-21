@@ -30,7 +30,7 @@ startOpacity = () => {
   document.body.style.overflow = "visible";
   document.body.style.overflowX = "hidden";
   document.documentElement.style.overflowX = "hidden";
-  document.documentElement.style.overflow = "visible";
+  
 };
 
 setTimeout(stopDisplay, 10000);
