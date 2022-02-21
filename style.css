@@ -50,6 +50,7 @@ body {
   overflow-x: hidden;
   position: relative;
   cursor: pointer;
+  pointer-events: all;
 }
 
 .wrapper {
