@@ -497,13 +497,13 @@ h3 {
     font-size: var(--fs-small);
   }
   .line1.clicked {
-    transform: translateY(5px) rotate(135deg);
+    transform: translateY(6px) rotate(135deg);
   }
   .line2.clicked {
     opacity: 0;
   }
   .line3.clicked {
-    transform: translateY(-10px) rotate(-135deg);
+    transform: translateY(-9.5px) rotate(-135deg);
   }
   .images {
     width: 90%;

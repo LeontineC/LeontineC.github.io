@@ -1,4 +1,4 @@
-
+//SELECTORS
 const animation = document.querySelector(".animation");
 const wrapper = document.querySelector(".wrapper");
 const pointer = document.querySelector(".pointer");
