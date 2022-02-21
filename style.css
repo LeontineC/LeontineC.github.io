@@ -16,6 +16,8 @@
 a {
   text-decoration: none;
   color: var(--color-light);
+  position: relative;
+  z-index: 8;
 }
 
 /* VARIABLES */
