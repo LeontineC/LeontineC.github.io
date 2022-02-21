@@ -36,7 +36,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 20vh;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 body {
@@ -44,7 +44,7 @@ body {
   background-color: var(--color-dark);
   font-family: "Gideon Roman", cursive;
   color: var(--color-light);
-  overflow-x: hidden;
+  overflow: hidden;
   /* position: relative; */
   cursor: none;
 }
@@ -560,7 +560,7 @@ h3 {
   font-family: var(--font-primary);
 } */
 
-/*.animation {
+.animation {
   position: absolute;
   
   border: solid var(--color-dark) 40px;
@@ -621,4 +621,4 @@ h3 {
     background-position: 100%, 300%, -100%, -200%, 100%;
   }
 } 
-*/
+

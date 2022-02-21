@@ -1,3 +1,4 @@
+
 const animation = document.querySelector(".animation");
 const wrapper = document.querySelector(".wrapper");
 const pointer = document.querySelector(".pointer");
@@ -16,23 +17,25 @@ feather.replace();
 
 //OPENING ANIMATION TIMEOUTS
 
-// stopDisplay = () => {
-// animation.style.display = "none";
-// };
+stopDisplay = () => {
+animation.style.display = "none";
+};
 
-// stopOpacity = () => {
-// animation.style.opacity = 0;
-// };
+stopOpacity = () => {
+animation.style.opacity = 0;
+};
 
 startOpacity = () => {
   wrapper.style.opacity = 1;
-  // document.body.style.overflow = "visible";
-  // document.body.style.overflowX = "hidden";
+  document.body.style.overflow = "visible";
+  document.body.style.overflowX = "hidden";
+  document.documentElement.style.overflowX = "hidden";
+  document.documentElement.style.overflow = "visible";
 };
 
-// setTimeout(stopDisplay, 10000);
-// setTimeout(stopOpacity, 3000);
-setTimeout(startOpacity, 800);
+setTimeout(stopDisplay, 10000);
+setTimeout(stopOpacity, 3000);
+setTimeout(startOpacity, 10000);
 
 // EVENT LISTENERS
 
