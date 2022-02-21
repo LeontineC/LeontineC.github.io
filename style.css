@@ -155,6 +155,7 @@ li a:focus {
   justify-content: center;
   align-items: center;
   max-width: 100%;
+  pointer-events: all;
 }
 
 section {
