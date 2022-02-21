@@ -37,8 +37,13 @@ setTimeout(startOpacity, 1000);
 // EVENT LISTENERS
 
 handlePointer = (e) => {
+  if(window.innerWidth < 992) {
+    return;
+  } else {
+
   pointer.style.cssText =
     "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+  }
 };
 
 handleHamburger = (e) => {
