@@ -47,7 +47,7 @@ body {
   color: var(--color-light);
   overflow-x: hidden;
   position: relative;
-  cursor: none;
+  cursor: pointer;
 }
 
 .wrapper {
@@ -401,7 +401,7 @@ h2 {
 
 /* POINTER MOUSEFOLLOW */
 
-.pointer {
+/*.pointer {
   position: fixed;
   left: 0;
   top: 0;
@@ -413,7 +413,7 @@ h2 {
   pointer-events: none;
   transition: 0.1s;
   z-index: 10;
-}
+} */
 
 /* MEDIA QUERIES */
 
@@ -435,9 +435,7 @@ h2 {
   .cards img {
     width: 30%;
   }
-  body {
-    cursor: pointer;
-  }
+ 
 }
 
 @media screen and (max-width: 768px) {
