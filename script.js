@@ -27,10 +27,10 @@ animation.style.opacity = 0;
 
 startOpacity = () => {
   wrapper.style.opacity = 1;
-  document.body.style.overflow = "visible";
+  document.body.style.overflowY = "visible";
   document.body.style.overflowX = "hidden";
   document.documentElement.style.overflowX = "hidden";
-  
+  document.documentElement.style.overflowY = "visible";
 };
 
 setTimeout(stopDisplay, 10000);
