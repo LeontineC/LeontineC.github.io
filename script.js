@@ -76,7 +76,7 @@ changeImage = (entries) => {
 
 loadImage = (entries) => {
   entries.forEach((entry) => {
-    console.log(entry);
+    // console.log(entry);
     if (entry.isIntersecting) {
       entry.target.classList.add("loaded");
     } else {
@@ -105,3 +105,10 @@ introObserver.observe(images.lastElementChild);
 card.forEach((picture) => {
   projectObserver.observe(picture);
 });
+
+const anchor = document.querySelector('.webshop');
+link = (e) => {
+  console.log('click');
+  anchor.href="https://leontinec.github.io/webshop/";
+}
+anchor.addEventListener('click', link);
