@@ -17,7 +17,7 @@ a {
   text-decoration: none;
   color: var(--color-light);
   position: relative;
-  z-index: 8;
+  z-index: 2;   /*hover z-index 2? */
 }
 
 /* VARIABLES */
@@ -31,6 +31,7 @@ a {
 
   --fs-large: 2rem;
   --fs-small: 1.2rem;
+
   --bg: url("assets/bg.jpg");
 }
 
@@ -39,7 +40,6 @@ a {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 20vh;
-  overflow-x: hidden;
 }
 
 body {
@@ -49,8 +49,8 @@ body {
   color: var(--color-light);
   overflow-x: hidden;
   position: relative;
-  cursor: pointer;
-  pointer-events: all;
+  cursor: none;
+ 
 }
 
 .wrapper {
@@ -155,7 +155,7 @@ li a:focus {
   justify-content: center;
   align-items: center;
   max-width: 100%;
-  pointer-events: all;
+  
 }
 
 section {
@@ -280,10 +280,7 @@ h2 {
   border-radius: 2%;
 }
 
-.projects a:hover, a:focus {
-  color: red;
 
-}
 
 /* CONTACT */
 
@@ -412,7 +409,7 @@ h2 {
 
 /* POINTER MOUSEFOLLOW */
 
-/*.pointer {
+.pointer {
   position: fixed;
   left: 0;
   top: 0;
@@ -424,7 +421,7 @@ h2 {
   pointer-events: none;
   transition: 0.1s;
   z-index: 10;
-} */
+} 
 
 /* MEDIA QUERIES */
 

@@ -36,11 +36,11 @@ setTimeout(startOpacity, 1000);
 
 // EVENT LISTENERS
 
-/*handlePointer = (e) => {
+handlePointer = (e) => {
   pointer.style.cssText =
     "left: " + e.clientX + "px; top: " + e.clientY + "px;";
   
-}; */
+}; 
 
 handleHamburger = (e) => {
   list.classList.toggle("active");
@@ -53,7 +53,7 @@ handleList = (e) => {
   list.classList.remove("active");
 };
 
-// document.addEventListener("mousemove", handlePointer);
+document.addEventListener("mousemove", handlePointer);
 hamburger.addEventListener("click", handleHamburger);
 listItems.forEach((item) => item.addEventListener("click", handleList));
 
@@ -106,9 +106,3 @@ card.forEach((picture) => {
   projectObserver.observe(picture);
 });
 
-const anchor = document.querySelector('.webshop');
-link = (e) => {
-  console.log('click');
-  anchor.href="https://leontinec.github.io/webshop/";
-}
-anchor.addEventListener('click', link);
