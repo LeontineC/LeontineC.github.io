@@ -17,11 +17,11 @@ feather.replace();
 //OPENING ANIMATION TIMEOUTS
 
 // stopDisplay = () => {
-  // animation.style.display = "none";
+// animation.style.display = "none";
 // };
 
 // stopOpacity = () => {
-  // animation.style.opacity = 0;
+// animation.style.opacity = 0;
 // };
 
 startOpacity = () => {
@@ -32,15 +32,14 @@ startOpacity = () => {
 
 // setTimeout(stopDisplay, 10000);
 // setTimeout(stopOpacity, 3000);
-setTimeout(startOpacity, 1000);
+setTimeout(startOpacity, 800);
 
 // EVENT LISTENERS
 
 handlePointer = (e) => {
   pointer.style.cssText =
     "left: " + e.clientX + "px; top: " + e.clientY + "px;";
-  
-}; 
+};
 
 handleHamburger = (e) => {
   list.classList.toggle("active");
@@ -76,7 +75,6 @@ changeImage = (entries) => {
 
 loadImage = (entries) => {
   entries.forEach((entry) => {
-    // console.log(entry);
     if (entry.isIntersecting) {
       entry.target.classList.add("loaded");
     } else {
@@ -105,4 +103,3 @@ introObserver.observe(images.lastElementChild);
 card.forEach((picture) => {
   projectObserver.observe(picture);
 });
-
